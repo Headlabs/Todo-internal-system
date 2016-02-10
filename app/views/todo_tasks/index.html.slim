@@ -1,0 +1,25 @@
+h1 Listing todo_tasks
+
+table
+  thead
+    tr
+      th Assigned to
+      th Description
+      th Todo date
+      th
+      th
+      th
+
+  tbody
+    - @todo_tasks.each do |todo_task|
+      tr
+        td = todo_task.assigned_to
+        td = todo_task.description
+        td = todo_task.todo_date
+        td = link_to 'Show', todo_task
+        td = link_to 'Edit', edit_todo_task_path(todo_task)
+        td = link_to 'Destroy', todo_task, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Todo task', new_todo_task_path

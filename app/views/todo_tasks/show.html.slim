@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Assigned to:
+  = @todo_task.assigned_to
+p
+  strong Description:
+  = @todo_task.description
+p
+  strong Todo date:
+  = @todo_task.todo_date
+
+= link_to 'Edit', edit_todo_task_path(@todo_task)
+'|
+= link_to 'Back', todo_tasks_path
